@@ -47,13 +47,14 @@ class _OrderStatusScreenState extends State<OrderStatusScreen> {
                   ],
                 )
                 : ListView.builder(
+              reverse: true,
                     itemCount: orderStatusList.orderStatusDataFromapi.length,
                     itemBuilder: (context, index) {
                       return Card(
                         margin: const EdgeInsets.all(10),
                         child: ExpansionTile(
                           title: Text(
-                            '${orderStatusList.orderStatusDataFromapi[index].sId}',
+                            'Order Number: ${orderStatusList.orderStatusDataFromapi[index].orderNumber   }',
                             style: const TextStyle(fontWeight: FontWeight.bold),
                           ),
                           subtitle: Text(
@@ -85,26 +86,16 @@ class _OrderStatusScreenState extends State<OrderStatusScreen> {
                                           fontSize: 16),
                                     ),
                                     Text(
-                                        '${orderStatusList.orderStatusDataFromapi[index].productId?.name}'),
+                                        '${orderStatusList.orderStatusDataFromapi[index].productName}'),
                                     const SizedBox(height: 10),
                                     const Text(
-                                      'Prich',
+                                      'Price',
                                       style: TextStyle(
                                           fontWeight: FontWeight.bold,
                                           fontSize: 16),
                                     ),
                                     Text(
-                                        '${orderStatusList.orderStatusDataFromapi[index].productId?.price}'),
-                                    const SizedBox(height: 10),
-                                    const Text(
-                                      'Mesege',
-                                      style: TextStyle(
-                                          fontWeight: FontWeight.bold,
-                                          fontSize: 16),
-                                    ),
-                                    const Text(
-                                      'Plase your order',
-                                    )
+                                        '৳${orderStatusList.orderStatusDataFromapi[index].price}'),
                                   ],
                                 ),
                               ),

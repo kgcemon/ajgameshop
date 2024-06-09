@@ -114,7 +114,7 @@ class WalletScreen extends StatelessWidget {
                                   backgroundColor: Colors.white,
                               leading: const Icon(Icons.monetization_on),
                               title: Text(
-                                  '${walletHiistoryData.wallerHistroyDataFromapi[index].amount} \$'),
+                                  '${walletHiistoryData.wallerHistroyDataFromapi[index].amount} ৳'),
                               subtitle: Text(
                                   '${walletHiistoryData.wallerHistroyDataFromapi[index].status}'),
                               children: [

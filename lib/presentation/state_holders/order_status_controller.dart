@@ -10,7 +10,7 @@ class OrderStausListController extends GetxController {
   bool get inProgress => _inProgress;
 
   String get errorMessage => _errorMessage;
-  List<StatusData> orderStatusDataFromapi = [];
+  List<Data> orderStatusDataFromapi = [];
 
   Future<bool> getOrderStausList() async {
     bool isSuccess = false;
