@@ -55,10 +55,6 @@ class _AddMoneyScreenState extends State<AddMoneyScreen>
                           email: 'kgcemonbd@gmail.com',
                         ),
                         amount: _amountTEController.text,
-                        credentials: UddoktapayCredentials(
-                          apiKey: '5eeefde84e85b00406ff3c41c9cee498d4e68372',
-                          panelURL: 'https://pay.codmshopbd.com',
-                        ),
                       );
                       if (response.status == ResponseStatus.completed) {
                         // handle on complete

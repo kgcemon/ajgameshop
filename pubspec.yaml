@@ -43,8 +43,8 @@ dependencies:
   shared_preferences: ^2.2.3
   http:
   lottie:
-  uddoktapay: ^0.0.3
   cached_network_image:
+  uddoktapay:
 
 dev_dependencies:
   flutter_test:
