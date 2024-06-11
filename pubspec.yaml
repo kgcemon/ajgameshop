@@ -40,7 +40,7 @@ dependencies:
   flutter_carousel_widget:
   lecle_flutter_carousel_pro:
   flutter_slider_drawer:
-  device_preview:
+  shared_preferences: ^2.2.3
   http:
   lottie:
   uddoktapay: ^0.0.3
