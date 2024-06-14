@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:lecle_flutter_carousel_pro/lecle_flutter_carousel_pro.dart';
 import 'package:lottie/lottie.dart';
-import '../widgets/app_drawer_menu.dart';
 import '../widgets/appbar.dart';
 import '../widgets/product_card_widget.dart';
 
@@ -15,7 +14,6 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      drawer: const AppDrawerMenu(),
       appBar: buildAppBar(),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 10.0),

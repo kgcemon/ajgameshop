@@ -39,12 +39,12 @@ dependencies:
   carousel_slider:
   flutter_carousel_widget:
   lecle_flutter_carousel_pro:
-  flutter_slider_drawer:
   shared_preferences: ^2.2.3
-  http:
-  lottie:
-  cached_network_image:
-  uddoktapay:
+  http: ^1.2.1
+  lottie: ^3.1.2
+  cached_network_image: ^3.3.1
+  webview_flutter: ^4.8.0
+
 
 dev_dependencies:
   flutter_test:

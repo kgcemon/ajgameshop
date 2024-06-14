@@ -1,10 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
-import 'package:uddoktapay/models/credentials.dart';
-import 'package:uddoktapay/models/customer_model.dart';
-import 'package:uddoktapay/models/request_response.dart';
-import 'package:uddoktapay/uddoktapay.dart';
-import 'package:uddoktapay/widget/custom_snackbar.dart';
 
 class AddMoneyScreen extends StatefulWidget {
   const AddMoneyScreen({super.key});
@@ -47,28 +42,6 @@ class _AddMoneyScreenState extends State<AddMoneyScreen>
                   style: ElevatedButton.styleFrom(
                       minimumSize: const Size(double.infinity, 50)),
                   onPressed: () async {
-                    if (true) {
-                      final response = await UddoktaPay.createPayment(
-                        context: context,
-                        customer: CustomerDetails(
-                          fullName: 'emon',
-                          email: 'kgcemonbd@gmail.com',
-                        ),
-                        amount: _amountTEController.text,
-                      );
-                      if (response.status == ResponseStatus.completed) {
-                        // handle on complete
-                        snackBar('Success. ${response.status}', context);
-                      }
-
-                      if (response.status == ResponseStatus.canceled) {
-                        // handle on cancel
-                      }
-
-                      if (response.status == ResponseStatus.pending) {
-                        // handle on pending
-                      }
-                    }
                   },
                   child: const Text(
                     'Pay Now',
@@ -79,5 +52,11 @@ class _AddMoneyScreenState extends State<AddMoneyScreen>
             ),
           ),
         ));
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
+    _amountTEController.dispose();
   }
 }

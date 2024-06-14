@@ -1,5 +1,5 @@
 class Urls {
-  static const String _baseUrls = 'https://topup-app-server.vercel.app';
+  static const String _baseUrls = 'http://ajgameshop.xyz';
   static String signUpUrls = "$_baseUrls/api/v1/auth/register";
   static String signInUrls = "$_baseUrls/api/v1/auth/login";
   static String categorysUrls = "$_baseUrls/api/v1/categorys";

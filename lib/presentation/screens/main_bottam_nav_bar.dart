@@ -43,8 +43,6 @@ class _MainBottomNavBarScreenState extends State<MainBottomNavBarScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // appBar: buildAppBar(),
-
       body: GetBuilder<MainBottomNavBarController>(builder: (context) {
         return _screens[_mainBottomNavBarController.selectedIndex];
       }),

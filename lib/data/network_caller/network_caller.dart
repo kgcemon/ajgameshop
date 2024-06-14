@@ -16,7 +16,7 @@ class NetworkCaller {
         Uri.parse(url),
         headers: {
           'accept': 'application/json',
-          'Authorization': UserAuthController.accessToken
+          'Authorization': UserAuthController.accessToken,
         },
       );
       log(response.statusCode.toString());
@@ -49,14 +49,15 @@ class NetworkCaller {
   }
 
   static Future<NetworkResponse> postRequest(
-      {required String url, Map<String, dynamic>? body}) async {
+      {required String url, dynamic? body, String? uddoktapayKey}) async {
     try {
       log(url);
       log(UserAuthController.accessToken);
       final Response response = await post(Uri.parse(url),
           headers: {
             'accept': 'application/json',
-            'Authorization': UserAuthController.accessToken
+            'Authorization': UserAuthController.accessToken,
+            'RT-UDDOKTAPAY-API-KEY': uddoktapayKey ?? '',
           },
           body: body);
       log(response.statusCode.toString());

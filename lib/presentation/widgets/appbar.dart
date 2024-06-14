@@ -10,10 +10,9 @@ buildAppBar({Color? color}) {
   return AppBar(
     surfaceTintColor: Colors.white,
     backgroundColor: color ?? Colors.white,
-    centerTitle: true,
     title: Image.asset(
       AssetsPath.titelPng,
-      width: 200,
+      width: 170,
     ),
     actions: [
       Container(

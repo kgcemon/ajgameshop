@@ -41,70 +41,82 @@ class _OrderStatusScreenState extends State<OrderStatusScreen> {
             ),
             child: orderStatusList.orderStatusDataFromapi.isEmpty
                 ? Column(
-                  children: [
-                    Lottie.asset("assets/lottie/noproduct.json"),
-                    const Text("No Order Found")
-                  ],
-                )
+              children: [
+                Lottie.asset("assets/lottie/noproduct.json"),
+                const Text("No Order Found")
+              ],
+            )
                 : ListView.builder(
-              reverse: true,
-                    itemCount: orderStatusList.orderStatusDataFromapi.length,
-                    itemBuilder: (context, index) {
-                      return Card(
-                        margin: const EdgeInsets.all(10),
-                        child: ExpansionTile(
-                          title: Text(
-                            'Order Number: ${orderStatusList.orderStatusDataFromapi[index].orderNumber   }',
-                            style: const TextStyle(fontWeight: FontWeight.bold),
-                          ),
-                          subtitle: Text(
-                              'Status: ${orderStatusList.orderStatusDataFromapi[index].status}'),
-                          children: [
-                            Container(
-                              width: double.infinity,
-                              decoration: const BoxDecoration(),
-                              child: Padding(
-                                padding: const EdgeInsets.all(10.0),
-                                // Add padding for better spacing
-                                child: Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    const Text(
-                                      'Date',
-                                      style: TextStyle(
-                                          fontWeight: FontWeight.bold,
-                                          fontSize: 16),
-                                    ),
-                                    Text(
-                                      '${orderStatusList.orderStatusDataFromapi[index].createdAt}',
-                                    ),
-                                    const SizedBox(height: 19),
-                                    const Text(
-                                      'Product',
-                                      style: TextStyle(
-                                          fontWeight: FontWeight.bold,
-                                          fontSize: 16),
-                                    ),
-                                    Text(
-                                        '${orderStatusList.orderStatusDataFromapi[index].productName}'),
-                                    const SizedBox(height: 10),
-                                    const Text(
-                                      'Price',
-                                      style: TextStyle(
-                                          fontWeight: FontWeight.bold,
-                                          fontSize: 16),
-                                    ),
-                                    Text(
-                                        '৳${orderStatusList.orderStatusDataFromapi[index].price}'),
-                                  ],
-                                ),
+              itemCount: orderStatusList.orderStatusDataFromapi.length,
+              itemBuilder: (context, index) {
+                return Card(
+                  margin: const EdgeInsets.all(10),
+                  child: ExpansionTile(
+                    leading: const Icon(Icons.reorder),
+                    title: Text(
+                      'Order Number: ${orderStatusList
+                          .orderStatusDataFromapi[index].orderNumber }',
+                      style: const TextStyle(fontWeight: FontWeight.bold),
+                    ),
+                    subtitle: Text(
+                      'Status: ${orderStatusList.orderStatusDataFromapi[index]
+                          .status}',
+                      style: TextStyle(
+                          color: orderStatusList.orderStatusDataFromapi[index]
+                              .status == 'rejected'
+                              ? Colors.red
+                              : orderStatusList.orderStatusDataFromapi[index]
+                              .status == 'pending' ? Colors.orange : Colors.green ),),
+                    children: [
+                      Container(
+                        width: double.infinity,
+                        decoration: const BoxDecoration(),
+                        child: Padding(
+                          padding: const EdgeInsets.all(10.0),
+                          // Add padding for better spacing
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              const Text(
+                                'Date',
+                                style: TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 16),
                               ),
-                            ),
-                          ],
+                              Text(
+                                '${orderStatusList.orderStatusDataFromapi[index]
+                                    .createdAt}',
+                              ),
+                              const SizedBox(height: 19),
+                              const Text(
+                                'Product',
+                                style: TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 16),
+                              ),
+                              Text(
+                                  '${orderStatusList
+                                      .orderStatusDataFromapi[index]
+                                      .productName}'),
+                              const SizedBox(height: 10),
+                              const Text(
+                                'Price',
+                                style: TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 16),
+                              ),
+                              Text(
+                                  '৳${orderStatusList
+                                      .orderStatusDataFromapi[index].price}'),
+                            ],
+                          ),
                         ),
-                      );
-                    },
+                      ),
+                    ],
                   ),
+                );
+              },
+            ),
           ),
         );
       }),
